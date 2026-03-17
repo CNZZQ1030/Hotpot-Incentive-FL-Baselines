@@ -1,0 +1,88 @@
+nohup: ignoring input
+======================================================================
+  Baseline Experiments — Automated Batch Runner
+  Started at: 2026-03-17 16:01:33
+======================================================================
+
+Total experiments (after filtering): 360
+Parameter grid: {
+  "method": [
+    "iafl",
+    "cgsv",
+    "rank",
+    "fedavgft",
+    "lgfedavg"
+  ],
+  "dataset": [
+    "mnist",
+    "fashion-mnist",
+    "cifar10"
+  ],
+  "distribution": [
+    "iid",
+    "non-iid-dir",
+    "non-iid-size",
+    "non-iid-class"
+  ],
+  "alpha": [
+    0.5
+  ],
+  "size_imbalance_ratio": [
+    5.0
+  ],
+  "min_classes_per_client": [
+    2
+  ],
+  "max_classes_per_client": [
+    5
+  ],
+  "num_clients": [
+    5,
+    10,
+    15,
+    20,
+    25,
+    30
+  ],
+  "num_rounds": [
+    50
+  ],
+  "local_epochs": [
+    1
+  ],
+  "standalone_epochs": [
+    50
+  ],
+  "seed": [
+    42
+  ],
+  "gpu": [
+    0
+  ],
+  "model": [
+    "cnn"
+  ]
+}
+
+──────────────────────────────────────────────────────────────────────
+[1/360] 2026-03-17 16:01:33
+  Experiment: iafl | mnist | iid | N=5 | R=50
+  CMD: /root/miniconda3/envs/zzq_env/bin/python main_baseline_unified.py --method iafl --dataset mnist --distribution iid --alpha 0.5 --size_imbalance_ratio 5.0 --min_classes_per_client 2 --max_classes_per_client 5 --num_clients 5 --num_rounds 50 --local_epochs 1 --standalone_epochs 50 --seed 42 --gpu 0 --model cnn --output_dir outputs
+2026-03-17 16:01:37 - ============================================================
+2026-03-17 16:01:37 - Experiment: iafl_mnist_iid_N5_R50_seed42
+2026-03-17 16:01:37 - Method: iafl
+2026-03-17 16:01:37 - Dataset: mnist, Distribution: iid
+2026-03-17 16:01:37 - Clients: 5, Rounds: 50
+2026-03-17 16:01:37 - Device: cuda:0
+2026-03-17 16:01:37 - Output: outputs/iafl/iafl_mnist_iid_N5_R50_seed42
+2026-03-17 16:01:37 - ============================================================
+2026-03-17 16:01:37 - [Data] Loading dataset...
+  0%|          | 0.00/9.91M [00:00<?, ?B/s]  1%|          | 98.3k/9.91M [00:00<00:16, 611kB/s]  3%|▎         | 328k/9.91M [00:00<00:08, 1.10MB/s]  9%|▉         | 918k/9.91M [00:00<00:04, 1.83MB/s] 29%|██▉       | 2.88M/9.91M [00:00<00:01, 5.38MB/s] 40%|████      | 4.00M/9.91M [00:00<00:00, 5.95MB/s] 50%|████▉     | 4.95M/9.91M [00:01<00:00, 5.91MB/s] 60%|█████▉    | 5.90M/9.91M [00:01<00:00, 5.93MB/s] 69%|██████▉   | 6.88M/9.91M [00:01<00:00, 5.97MB/s] 79%|███████▉  | 7.86M/9.91M [00:01<00:00, 6.00MB/s] 90%|████████▉ | 8.88M/9.91M [00:01<00:00, 6.07MB/s]100%|█████████▉| 9.86M/9.91M [00:01<00:00, 6.15MB/s]100%|██████████| 9.91M/9.91M [00:01<00:00, 5.33MB/s]
+  0%|          | 0.00/28.9k [00:00<?, ?B/s]100%|██████████| 28.9k/28.9k [00:00<00:00, 356kB/s]
+  0%|          | 0.00/1.65M [00:00<?, ?B/s]  6%|▌         | 98.3k/1.65M [00:00<00:02, 616kB/s] 20%|█▉        | 328k/1.65M [00:00<00:01, 1.10MB/s] 58%|█████▊    | 950k/1.65M [00:00<00:00, 2.36MB/s]100%|██████████| 1.65M/1.65M [00:00<00:00, 2.93MB/s]
+  0%|          | 0.00/4.54k [00:00<?, ?B/s]100%|██████████| 4.54k/4.54k [00:00<00:00, 3.71MB/s]
+2026-03-17 16:01:43 - [Data] Partitioning: iid
+2026-03-17 16:01:43 - [Data] Shard sizes: min=12000, max=12000, mean=12000
+2026-03-17 16:01:43 - [Standalone] Starting standalone training (50 epochs)...
+2026-03-17 16:01:43 - [Standalone] Training 5 clients for 50 epochs each...
+2026-03-17 16:02:12 -   Client 1/5: standalone_acc=0.9619

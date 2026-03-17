@@ -1,0 +1,14 @@
+2026-03-17 16:01:37 - ============================================================
+2026-03-17 16:01:37 - Experiment: iafl_mnist_iid_N5_R50_seed42
+2026-03-17 16:01:37 - Method: iafl
+2026-03-17 16:01:37 - Dataset: mnist, Distribution: iid
+2026-03-17 16:01:37 - Clients: 5, Rounds: 50
+2026-03-17 16:01:37 - Device: cuda:0
+2026-03-17 16:01:37 - Output: outputs/iafl/iafl_mnist_iid_N5_R50_seed42
+2026-03-17 16:01:37 - ============================================================
+2026-03-17 16:01:37 - [Data] Loading dataset...
+2026-03-17 16:01:43 - [Data] Partitioning: iid
+2026-03-17 16:01:43 - [Data] Shard sizes: min=12000, max=12000, mean=12000
+2026-03-17 16:01:43 - [Standalone] Starting standalone training (50 epochs)...
+2026-03-17 16:01:43 - [Standalone] Training 5 clients for 50 epochs each...
+2026-03-17 16:02:12 -   Client 1/5: standalone_acc=0.9619

@@ -1,0 +1,16 @@
+{
+  "distribution": "iid",
+  "shard_sizes": [
+    12000,
+    12000,
+    12000,
+    12000,
+    12000
+  ],
+  "partition_kwargs": {
+    "alpha": 0.5,
+    "size_imbalance_ratio": 5.0,
+    "min_classes_per_client": 2,
+    "max_classes_per_client": 5
+  }
+}
